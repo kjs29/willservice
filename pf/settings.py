@@ -126,9 +126,9 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-STATICFILES_DIRS = [
+# STATICFILES_DIRS will allow to find in other diretories, not just app-level static files
+STATICFILES_DIRS = [ 
     BASE_DIR / "media",
-    '/var/www/static/',
 ]
 
 # Default primary key field type

@@ -12,6 +12,7 @@
             background-image: url("{% static 'images/random.png' %}");
             background-repeat: no-repeat;
             background-size: cover;
+            background-position: center;
         }
     </style>
 </head>
@@ -30,17 +31,14 @@
         </div>
 
         <p class="mt-5">
-            <a class="btn btn-outline-dark" data-bs-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="false" aria-controls="collapseExample1" style="border-radius: 0.25rem;">
-                Jack's Story
-            </a>
-            
-            <a class="btn btn-outline-dark" data-bs-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false" aria-controls="collapseExample2" style="border-radius: 0.25rem;">
-                Sarah's Story
-            </a>
+            <!-- <a class="btn btn-outline-dark" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Jack's Story</a>
+            <button class="btn btn-outline-dark" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">Sarah's Story</button> -->
+            <button class="btn btn-outline-dark" type="button" data-bs-toggle="collapse" data-bs-target=".multi-collapse" aria-expanded="false" aria-controls="multiCollapseExample1 multiCollapseExample2" style="border-radius: 0.25rem;">View Jack & Sarah's stories</button>
         </p>
-        <div class="collapse" id="collapseExample1">
-            <div class="card card-body">
-                <p>
+        <div class="row">
+            <div class="col">
+            <div class="collapse multi-collapse" id="multiCollapseExample1">
+                <div class="card card-body">
                     <strong>Jack's Story</strong><br><br>
                     
                     Once upon a time, there was a man named Jack who had a wife and two children. Jack was a successful business owner and had worked hard to provide for his family.<br><br>
@@ -56,12 +54,12 @@
                     Jack's wife and children learned a valuable lesson about the importance of making a will. They realized that it's not just about protecting your assets, but it's also about making things easier for your loved ones after you're gone.<br><br>
                     
                     From that day forward, they made sure to encourage everyone they knew to make a will, no matter how young or healthy they were. They knew that it was the responsible and caring thing to do, and it would save their loved ones from unnecessary stress and hardship in the future.
-                </p>
+                </div>
             </div>
-        </div>
-        <div class="collapse" id="collapseExample2">
-            <div class="card card-body">
-                <p>
+            </div>
+            <div class="col">
+            <div class="collapse multi-collapse" id="multiCollapseExample2">
+                <div class="card card-body">
                     <strong>Sarah's Story</strong><br><br>
 
                     Once there was a woman named Sarah who had a successful career and a loving family. Sarah was always responsible with her finances, and she knew that making a will was an important step to ensure that her family would be taken care of after she was gone.<br><br>
@@ -75,10 +73,10 @@
                     Sarah's family was grateful for her foresight and responsible planning. They knew that her will was a tangible way for her to express her love and care for them, even after she was gone.<br><br>
 
                     Sarah's story is a powerful example of how making a will can benefit someone and their family. It not only ensures that their wishes are carried out, but it also saves their loved ones from the stress and confusion of managing their estate.
-                </p>
+                </div>
+            </div>
             </div>
         </div>
-
 
         <h2 class="mt-5 mb-3">Prices</h2>
         <div class="table-responsive shadow rounded-3">
@@ -134,9 +132,9 @@
                 </tr>
 
                 <tr>
-                    <th scope="row">Other Notary Services</th>
-                    <td colspan="2" class="text-center"><strong>$ 49</strong></td>
-                    <td colspan="2" class="text-center">Varies</td>                    
+                    <th scope="row">Notary Services</th>
+                    <td colspan="2" class="text-center">$ 49 for the first notary signature, $ 10 for each additional notary signature</td>
+                    <td colspan="2" class="text-center">-</td>                    
                 </tr>
             </tbody>
             </table>
@@ -146,7 +144,7 @@
         <h2 class="mt-5 mb-3">Request Questionaire</h2>
         <div class="row border border-dark p-3 m-1">
             <div class="text-center btn-group-vertical p-1 col-md-6">
-                <h4>We will send you our questionnaire for our estate package.<br><br>Get started by filling it out and send it back to us when you are ready.<br><br>Questionaire help us guide you to write your own wills with clearer instructions.</h4>
+                <h4>We will send you our questionnaire for our estate package.<br><br>Get started by filling it out and send it back to us when you are ready.<br><br>The questionaire helps us guide you to write your own will with clear instructions.</h4>
             </div>
             <div class="col-md-6">
                 <form method="post">{% csrf_token %}
