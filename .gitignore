@@ -18,7 +18,7 @@ wills/migrations
 
 # Static folder at project root
 /static/
-questionaire.pdf
+*.pdf
 
 # macOS
 ._*
