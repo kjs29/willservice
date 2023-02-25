@@ -6,6 +6,7 @@ a.py
 
 # Env
 .env
+.env2
 myvenv/
 venv/
 env
@@ -17,7 +18,7 @@ db.sqlite3
 wills/migrations
 
 # Static folder at project root
-
+static/admin/
 *.pdf
 *.docx
 

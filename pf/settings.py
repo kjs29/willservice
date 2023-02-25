@@ -25,17 +25,19 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
-SECRET_KEY = os.getenv('SECRET_KEY')
+SECRET_KEY = str(os.getenv('SECRET_KEY'))
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'calgarymobilewills@gmail.com'
-EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
+# EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD")
+with open(os.path.join(BASE_DIR, 'pf', '.env2')) as f:
+    EMAIL_HOST_PASSWORD = f.read().strip()
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['www.calgarymobilewills.ca','calgarymobilewills.ca']
 CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_SECURE = True
 
@@ -128,11 +130,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 
+STATIC_ROOT = os.path.join(BASE_DIR / 'static')
+
 STATIC_URL = 'static/'
 
 # STATICFILES_DIRS will allow to find in other diretories, not just app-level static files
-STATICFILES_DIRS = [ 
-    BASE_DIR / "static",
+STATICFILES_DIRS = [
+
 ]
 
 # Default primary key field type
