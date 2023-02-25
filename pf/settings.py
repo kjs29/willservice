@@ -65,6 +65,8 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'pf.urls'
 
+PREPEND_WWW = True
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
