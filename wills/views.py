@@ -15,7 +15,7 @@ def home(request):
         if email not in list(ClientRequest.objects.all().values_list('email', flat=True)):
             newclientrequest = ClientRequest.objects.create(name=name, email=email)
 
-        file_path = os.path.join(settings.BASE_DIR, 'questionaire.pdf')
+        file_path = os.path.join(settings.BASE_DIR, 'ESTATE PACKAGE QUESTIONNAIRE.docx')
 
         email = EmailMessage(
             f"Dear {name}, here is the questionaire you requested.",
@@ -31,7 +31,7 @@ def home(request):
         email.content_subtype = 'html'
 
         with open(file_path, 'rb') as f:
-            email.attach(os.path.basename(file_path), f.read(), 'application/pdf')
+            email.attach(os.path.basename(file_path), f.read(), 'application/vnd.openxmlformats-officedocument.wordprocessingml.document')
 
         email.send()
         # send_mail(

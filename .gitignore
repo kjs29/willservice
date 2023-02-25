@@ -19,6 +19,7 @@ wills/migrations
 # Static folder at project root
 /static/
 *.pdf
+*.docx
 
 # macOS
 ._*
