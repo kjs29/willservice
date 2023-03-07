@@ -6,25 +6,86 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900;1000&display=swap" rel="stylesheet">
     <title>Calgary Mobile Wills</title>
     <style>
+        a.nav-link {
+            color: rgb(111, 53, 212);
+        }
+        a.nav-link:hover {
+            color: rgb(63, 29, 122);
+        }
         .background {
-            background-image: url("{% static 'images/random.png' %}");
+            background-image: url("{% static 'images/hero.jpg' %}");
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center;
         }
+        .btn-primary {
+            background-color: rgb(111, 53, 212) !important;
+            border-color: rgb(111, 53, 212) !important;
+        }
+        .btn-primary:hover,
+        .btn-primary:active,
+        .btn-primary:visited,
+        .btn-primary:focus {
+            background-color: rgb(72, 34, 138) !important;
+            border-color: rgb(72, 34, 138) !important;
+        }
+        .accordion-button:not(.collapsed) {
+            color: rgb(93, 63, 211);
+            background-color: rgb(247, 247, 252);
+        }
+        .emphasis {
+            font-weight: 600;
+            color: rgb(112, 41, 99);
+        }
+        #price, #faq, #contact {
+            scroll-margin-top: 90px;
+        }
     </style>
 </head>
-<body>
-    <div class="container">
+<body style="font-family: 'Nunito', sans-serif;">
+
+    <!--navbar-->
+    <nav class="navbar navbar-expand-lg sticky-top" style="background-color: rgb(247, 247, 252);">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="https://www.calgarymobilewills.ca" target="_top"><h1 style="font-weight: 800; color: rgb(63, 29, 122);">Calgary Mobile Wills</h1></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#top">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#price">Services & Prices</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#faq">Common Questions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact us</a>
+                    </li>
+                    <!--<li class="nav-item">-->
+                    <!--    <a class="nav-link disabled text-dark" href="#" tabindex="-1" aria-disabled="true">Mobile Service: We will come to you!</a>-->
+                    <!--</li>-->
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container" id="begin">
 
         <!--Hero-->
         <div class="row mt-5">
             <div class="col p-5 background">
                 <div class="text-white p-2" style="background-color:rgba(0, 0, 0, 0.4)">
-                    <h1 class="display-1">Write Your Will, Write Your Story</h1>
-                    <h3 class="font-weight-bold">Let us help you leave a legacy</h3>
+                    <p class="display-1">Write Your Will, Write Your Story</p>
+                    <p class="display-5 font-weight-bold">Let us help you leave a legacy</p>
                 </div>
             </div>
         </div>
@@ -35,7 +96,7 @@
             <button class="btn btn-outline-dark" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">Sarah's Story</button> -->
             <button class="btn btn-outline-dark" type="button" data-bs-toggle="collapse" data-bs-target=".multi-collapse" aria-expanded="false" aria-controls="multiCollapseExample1 multiCollapseExample2" style="border-radius: 0.25rem;">View Jack & Sarah's stories</button>
         </p>
-        <div class="row">
+        <div class="row my-3">
             <div class="col">
             <div class="collapse multi-collapse" id="multiCollapseExample1">
                 <div class="card card-body">
@@ -78,75 +139,12 @@
             </div>
         </div>
 
-        <!--Price-->
-        <h2 class="mt-3 mb-3">Prices</h2>
-        <div class="table-responsive shadow rounded-3">
-            <table class="table border-light">
-
-            <thead>
-                <tr class="text-center">
-                <th scope="col"></th>
-                <th colspan="2"><strong>Our Price</strong></th>
-                <th colspan="2">Industry Average Price</th>
-
-                </tr>
-            </thead>
-            <tbody>
-                <tr class="border-bottom border-dark-subtle">
-                    <th scope="row"></th>
-                    <td class="text-center"><strong>Individual</strong></td>
-                    <td class="text-center"><strong>Couple</strong></td>
-                    <td class="text-center">Individual</td>
-                    <td class="text-center">Couple</td>
-                </tr>
-
-                <tr>
-                    <th scope="row">Simple Will</th>
-                    <td class="text-center"><strong>$ 400</strong></td>
-                    <td class="text-center"><strong>$ 500</strong></td>
-                    <td class="text-center">$ 700</td>
-                    <td class="text-center">$ 800</td>
-                </tr>
-
-                <tr>
-                    <th scope="row">Enduring Power Of Attorney</th>
-                    <td class="text-center"><strong>$ 200</strong></td>
-                    <td class="text-center"><strong>$ 300</strong></td>
-                    <td class="text-center">$ 400</td>
-                    <td class="text-center">$ 500</td>
-                </tr>
-
-                <tr>
-                    <th scope="row">Personal Directive</th>
-                    <td class="text-center"><strong>$ 200</strong></td>
-                    <td class="text-center"><strong>$ 300</strong></td>
-                    <td class="text-center">$ 400</td>
-                    <td class="text-center">$ 500</td>
-                </tr>
-
-                <tr class="bg-warning-subtle">
-                    <th scope="row">Estate Package</th>
-                    <td class="text-center"><strong>$ 500</strong></td>
-                    <td class="text-center"><strong>$ 700</strong></td>
-                    <td class="text-center">$ 900</td>
-                    <td class="text-center">$ 1100</td>
-                </tr>
-
-                <tr>
-                    <th scope="row">Notary Services</th>
-                    <td colspan="2" class="text-center">$ 49 for the first notary signature, $ 10 for each additional notary signature</td>
-                    <td colspan="2" class="text-center">-</td>
-                </tr>
-            </tbody>
-            </table>
-        </div>
-
         <!--Request questionnaire-->
         {% if not requested %}
-        <h2 class="mt-5 mb-3">Request Questionnaire</h2>
-        <div class="row border border-dark p-3 m-1">
+        <h2 class="mt-3">Request Free Questionnaire</h2>
+        <div class="row border border-dark p-3 m-1 mb-5">
             <div class="text-center btn-group-vertical p-1 col-md-6">
-                <h4>We will send you our questionnaire for our estate package.<br><br>Get started by filling it out and send it back to us when you are ready.<br><br>The questionnaire helps guide us to write your will with your clear instructions.</h4>
+                <h4 style="line-height: 1.5em;">Fill out the form and you will get a <span class="emphasis">FREE</span> questionnaire that creates <span class="emphasis">Your Own Will</span> with your clear instructions.</h4>
             </div>
             <div class="col-md-6">
                 <form method="post">{% csrf_token %}
@@ -159,22 +157,78 @@
                         <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp" required>
                         <div id="emailHelp" class="form-text">We'll never share your information with anyone else.</div>
                     </div>
-                    <input type="submit" class="btn btn-primary mb-2" name="questionnaire" value="Request questionnaire">
+                    <input type="submit" class="btn btn-primary mb-2" name="questionnaire" value="Request questionnaire" style="background-color: purple;">
                 </form>
-            </div>
-        </div>
-        {% else %}
-        <div class="jumbotron jumbotron-fluid text-center">
-            <div class="container">
-                <h1 class="display-1 mt-3">Thank you</h1>
-                <p class="lead">Your submission has been received.</p>
-                <p>We will send the questionnaire in your email</p>
             </div>
         </div>
         {% endif %}
 
+
+        <!--Price-->
+        <h2 id="price" class="mt-3">Services & Prices</h2>
+        <div class="table-responsive shadow rounded-3 mb-5">
+        <table class="table border-light">
+
+        <thead class="align-middle">
+            <tr class="text-center">
+            <th scope="col"></th>
+            <th colspan="2"><strong>Our Price</strong></th>
+            <th colspan="2">Industry Average Price</th>
+
+            </tr>
+        </thead>
+        <tbody class="align-middle">
+            <tr class="border-bottom border-dark-subtle">
+                <th scope="row"></th>
+                <td class="text-center"><strong>Individual</strong></td>
+                <td class="text-center"><strong>Couple</strong></td>
+                <td class="text-center">Individual</td>
+                <td class="text-center">Couple</td>
+            </tr>
+
+            <tr>
+                <th scope="row">Simple Will</th>
+                <td class="text-center"><strong>$ 400</strong></td>
+                <td class="text-center"><strong>$ 500</strong></td>
+                <td class="text-center">$ 700</td>
+                <td class="text-center">$ 800</td>
+            </tr>
+
+            <tr>
+                <th scope="row">Enduring Power Of Attorney</th>
+                <td class="text-center"><strong>$ 200</strong></td>
+                <td class="text-center"><strong>$ 300</strong></td>
+                <td class="text-center">$ 400</td>
+                <td class="text-center">$ 500</td>
+            </tr>
+
+            <tr>
+                <th scope="row">Personal Directive</th>
+                <td class="text-center"><strong>$ 200</strong></td>
+                <td class="text-center"><strong>$ 300</strong></td>
+                <td class="text-center">$ 400</td>
+                <td class="text-center">$ 500</td>
+            </tr>
+
+            <tr style="background-color: rgb(230, 230, 250);">
+                <th scope="row">Estate Package<br>(All of the three above)</th>
+                <td class="text-center"><strong>$ 500</strong></td>
+                <td class="text-center"><strong>$ 700</strong></td>
+                <td class="text-center">$ 900</td>
+                <td class="text-center">$ 1100</td>
+            </tr>
+
+            <tr>
+                <th scope="row">Notary Services</th>
+                <td colspan="2" class="text-center">$ 49 for the first notary signature, $ 10 for each additional notary signature</td>
+                <td colspan="2" class="text-center">-</td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+
         <!--FAQ-->
-        <h2 class="mt-5 mb-3">Frequently Asked Questions</h2>
+        <h2 id="faq" class="mt-3 mb-3">Frequently Asked Questions</h2>
         <div class="row mb-3">
             <div class="accordion" id="accordionPanelsStayOpenExample">
                 <div class="accordion-item">
@@ -254,12 +308,10 @@
                         </div>
                     </div>
                 </div>
-
-
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="panelsStayOpen-headingNine">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseNine" aria-expanded="false" aria-controls="panelsStayOpen-collapseNine">
-                        Where do I have to go to sign a will?
+                            Where do I have to go to sign a will?
                         </button>
                     </h2>
                     <div id="panelsStayOpen-collapseNine" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingNine">
@@ -278,8 +330,8 @@
                         <div class="accordion-body">
                             We are aware that not everyone is mobile, we will come to your place.
                         </div>
+                    </div>
                 </div>
-
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="panelsStayOpen-headingEleven">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseEleven" aria-expanded="false" aria-controls="panelsStayOpen-collapseEleven">
@@ -292,7 +344,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="panelsStayOpen-headingTwelve">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwelve" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwelve">
@@ -305,9 +356,6 @@
                         </div>
                     </div>
                 </div>
-
-
-
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="panelsStayOpen-headingFourteen">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFourteen" aria-expanded="false" aria-controls="panelsStayOpen-collapseFourteen">
@@ -346,14 +394,12 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
-    </div>
 
         <!--Contact-->
-        <h2 class="mt-4">Contact us</h2>
-        <div class="container mb-4 py-3 border border border-1">
+        <h2 id="contact" class="mt-4">Contact us</h2>
+            <div class="container mb-4 py-3 border border-1">
         <form method="post">{% csrf_token %}
 
             <div class="mb-3">
@@ -375,6 +421,24 @@
             <input class="btn btn-primary btn-lg" name="contact" type="submit" value="Send Message">
             </div>
         </form>
+    </div>
+
+        <!--Footer-->
+        <div class="container">
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+            <div class="col-md-12 d-flex align-items-center">
+                <a href="https://www.calgarymobilewills.ca" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+                    Calgary Mobile Wills
+                </a>
+                <span class="mb-3 mb-md-0 text-muted">© 2023 Calgary Mobile Wills</span>
+            </div>
+
+            <!--<ul class="nav col-md-4 justify-content-end list-unstyled d-flex">-->
+            <!--  <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>-->
+            <!--  <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>-->
+            <!--  <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li>-->
+            <!--</ul>-->
+        </footer>
     </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
